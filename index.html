@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Zeeshan Khan - Portfolio</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'%3E%3Cpath d='M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h3l-1 1v1h12v-1l-1-1h3c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z'/%3E%3Cpath d='M9 8h2v1H9zm4 0h2v1h-2zM9 10h6v1H9zm0 2h4v1H9z'/%3E%3C/svg%3E">
+    <meta name="description"
+        content="Muhammad Zeeshan Khan - Software Engineer specializing in AI, Machine Learning, and Computer Vision. Portfolio showcasing innovative projects and research.">
+    <meta name="keywords"
+        content="Muhammad Zeeshan Khan, Software Engineer, AI, Machine Learning, Computer Vision, Portfolio">
+    <meta name="author" content="Muhammad Zeeshan Khan">
+    <meta property="og:title" content="Muhammad Zeeshan Khan - Portfolio">
+    <meta property="og:description"
+        content="Software Engineer passionate about AI, Machine Learning, and Computer Vision">
+    <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --accent-color: #0f172a;
+            --text-light: #94a3b8;
+            --bg-light: #f8fafc;
+            --border-light: #e2e8f0;
+            --white: #ffffff;
+            --dark-bg: #0f172a;
+            --dark-surface: #1e293b;
+            --dark-border: #334155;
+            --dark-text: #e2e8f0;
+            --dark-text-secondary: #94a3b8;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --secondary-color: #94a3b8;
+            --accent-color: #e2e8f0;
+            --text-light: #64748b;
+            --bg-light: #0f172a;
+            --border-light: #334155;
+            --white: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--accent-color);
+            background-color: var(--bg-light);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border-light);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--secondary-color);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: rotate(180deg);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, var(--bg-light) 0%, rgba(37, 99, 235, 0.05) 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-text .motto {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-style: italic;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            text-align: center;
+            animation: fadeInRight 0.8s ease 0.4s both;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.2);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--secondary-color);
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 12px 20px;
+            background: var(--white);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            color: var(--primary-color);
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--accent-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        [data-theme="dark"] footer {
+            background: var(--dark-surface);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s ease;
+        }
+
+        .modal-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .cv-section {
+            margin-bottom: 2rem;
+        }
+
+        .cv-section h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-item ul {
+            margin-left: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .modal-content {
+                margin: 5% auto;
+                width: 95%;
+            }
+
+            .modal-body {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-animate.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#home" class="logo">MZK</a>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><button class="btn btn-primary" onclick="openModal()">View CV</button></li>
+                    <li><button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button></li>
+                </ul>
+                <div class="hamburger" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Muhammad Zeeshan Khan</h1>
+                    <p class="motto">"Ad Discendum et Creandum – Learning, Creating, Innovating."</p>
+                    <p>Software Engineer passionate about AI, Machine Learning, and Computer Vision. Currently pursuing
+                        Master's studies while creating innovative solutions for real-world challenges.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="openModal()">View Resume</button>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://avatars.githubusercontent.com/u/128678407?s=400&u=1db660d0cf448bedd1fbbca69926c9366944af1b&v=4?text=MZK"
+                        alt="Muhammad Zeeshan Khan" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title scroll-animate">About Me</h2>
+            <div class="about-content scroll-animate">
+                <p>I hold a Bachelor's degree in Computer Science from The University of Agriculture, Peshawar,
+                    Pakistan, and I am currently pursuing my Master's studies to further advance my knowledge. My
+                    academic and professional journey has shaped a strong interest in machine learning, artificial
+                    intelligence, computer vision, image processing, and large language models.</p>
+                <br>
+                <p>Alongside my studies, I work as a software engineer with experience in MERN development, data
+                    science, and applied machine learning. My research interests are diverse, and I am particularly
+                    driven to explore how emerging technologies can be applied to address real-world challenges and
+                    create innovative solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title scroll-animate">Let's Connect</h2>
+            <div class="social-links scroll-animate">
+                <a href="mailto:iamxeeshankhan@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+                <a href="https://linkedin.com/in/iamxeeshankhan" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://twitter.com/IamXeeshanKhan_" target="_blank" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="https://bsky.app/profile/did:plc:xxcqlmnsomx2wwk2gdguhlvn" target="_blank" class="social-link">
+                    <i class="fas fa-cloud"></i>
+                    <span>Bluesky</span>
+                </a>
+                <a href="https://github.com/iamxeeshankhan" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://gitlab.com/iamxeeshankhan" target="_blank" class="social-link">
+                    <i class="fab fa-gitlab"></i>
+                    <span>GitLab</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Note: The best way to reach me is through email. Feel free to contact me for any inquiries or
+                collaborations!</p>
+            <p>&copy; Copyright 2025 Muhammad Zeeshan Khan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- CV Modal -->
+    <div id="cvModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Curriculum Vitae</h2>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cv-section">
+                    <h3>Personal Information</h3>
+                    <p><strong>Name:</strong> Muhammad Zeeshan Khan</p>
+                    <p><strong>Position:</strong> Software Engineer</p>
+                    <p><strong>Email:</strong> iamxeeshankhan@gmail.com</p>
+                    <p><strong>Phone:</strong> +923495139070</p>
+                </div>
+
+                <div class="cv-section">
+                    <h3>Summary</h3>
+                    <p>A Computer Science graduate passionate about innovation, research, and solving real-world
+                        problems using technology.</p>
+                </div>
+
+                <div class="cv-section">
+                    <h3>Projects</h3>
+
+                    <div class="project-item">
+                        <div class="project-title">Pediatric Wrist X-ray Abnormality Detection - Research Project</div>
+                        <div class="project-date">2025 / 09</div>
+                        <ul>
+                            <li>Implemented a YOLOv11-based computer vision pipeline in a Google Colab notebook to
+                                detect fractures and other abnormalities in pediatric wrist X-rays</li>
+                            <li>Automated download of the GRAZPEDWRI-DX dataset and organized raw files for processing
+                            </li>
+                            <li>Pre-processed images and annotations, converting the dataset into YOLO format with
+                                train/validation/test splits and class mappings</li>
+                            <li>Fine-tuned YOLOv11 to detect nine pediatric wrist X-ray findings: Bone anomaly,
+                                Fracture, Foreign body, etc.</li>
+                            <li>Reusable script packages and a reproducible notebook for training, inference, and
+                                evaluation on new images</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-title">BS(CS) Final Year Project - The University of Agriculture</div>
+                        <div class="project-date">2024 / 08</div>
+                        <ul>
+                            <li>Developed a Speech Recognition Application with a user-friendly GUI using Python,
+                                Tkinter, and AssemblyAI</li>
+                            <li>The application transcribes speech, generates subtitles, and summarizes spoken content
+                            </li>
+                            <li>Implemented advanced speech recognition algorithms to ensure high accuracy</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-title">Agent Authorization Tool - A Service for Tools for Accountants</div>
+                        <div class="project-date">2025 / 04</div>
+                        <ul>
+                            <li>Built a tool that invites multiple clients to authorize their accountant to manage taxes
+                                on their behalf</li>
+                            <li>Deployed the service on Google Cloud Platform</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-title">e-island - Personal Web Project</div>
+                        <div class="project-date">2023 / 06</div>
+                        <ul>
+                            <li>Created a full-stack website using vanilla JavaScript for the front-end with Pug and
+                                Express.js with MongoDb and Mongoose in the backend and deployed it on Microsoft Azure
+                            </li>
+                            <li>Gained hands-on experience in cloud hosting, deployment, and scalability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.querySelector('.theme-toggle i');
+
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedTheme = localStorage.getItem('theme');
+            const themeIcon = document.querySelector('.theme-toggle i');
+
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fas fa-sun';
+            }
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navMenu = document.querySelector('.nav-menu');
+                const hamburger = document.querySelector('.hamburger');
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Modal Functions
+        function openModal() {
+            document.getElementById('cvModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('cvModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('cvModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        function animateOnScroll() {
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+
+            animatedElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on page load
+
+        // Add active state to navigation based on scroll position
+        window.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop <= 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
