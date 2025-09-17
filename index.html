@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Zeeshan Khan - Portfolio</title>
+    <title>Muhammad Zeeshan Khan</title>
+
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'%3E%3Cpath d='M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h3l-1 1v1h12v-1l-1-1h3c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z'/%3E%3Cpath d='M9 8h2v1H9zm4 0h2v1h-2zM9 10h6v1H9zm0 2h4v1H9z'/%3E%3C/svg%3E">
+
     <meta name="description"
         content="Muhammad Zeeshan Khan - Software Engineer specializing in AI, Machine Learning, and Computer Vision. Portfolio showcasing innovative projects and research.">
     <meta name="keywords"
@@ -26,624 +28,15 @@
         content="Software Engineer passionate about AI, Machine Learning, and Computer Vision">
     <meta name="twitter:image"
         content="https://avatars.githubusercontent.com/u/128678407?s=400&u=1db660d0cf448bedd1fbbca69926c9366944af1b&v=4?text=Muhammad+Zeeshan+Khan+-+Software+Engineer">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/phosphor-icons"></script>
-
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #64748b;
-            --accent-color: #0f172a;
-            --text-light: #94a3b8;
-            --bg-light: #f8fafc;
-            --border-light: #e2e8f0;
-            --white: #ffffff;
-            --dark-bg: #0f172a;
-            --dark-surface: #1e293b;
-            --dark-border: #334155;
-            --dark-text: #e2e8f0;
-            --dark-text-secondary: #94a3b8;
-        }
-
-        [data-theme="dark"] {
-            --primary-color: #3b82f6;
-            --secondary-color: #94a3b8;
-            --accent-color: #e2e8f0;
-            --text-light: #64748b;
-            --bg-light: #0f172a;
-            --border-light: #334155;
-            --white: #1e293b;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--accent-color);
-            background-color: var(--bg-light);
-            transition: all 0.3s ease;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--white);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        /* Mobile Menu Overlay */
-        .nav-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .nav-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: 2px solid var(--border-light);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            color: var(--secondary-color);
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            transform: rotate(180deg);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--accent-color);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            background: linear-gradient(135deg, var(--bg-light) 0%, rgba(37, 99, 235, 0.05) 100%);
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .hero-text .motto {
-            font-size: 1.25rem;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-            font-style: italic;
-            animation: fadeInUp 0.8s ease 0.2s both;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            animation: fadeInUp 0.8s ease 0.6s both;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .hero-image {
-            text-align: center;
-            animation: fadeInRight 0.8s ease 0.4s both;
-        }
-
-        .profile-img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--primary-color);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.2);
-        }
-
-        /* About Section */
-        .about {
-            padding: 5rem 0;
-            background: var(--white);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--accent-color);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--secondary-color);
-            text-align: center;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 5rem 0;
-            background: var(--bg-light);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 12px 20px;
-            background: var(--white);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--secondary-color);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            color: var(--primary-color);
-        }
-
-        .social-link i {
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--accent-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        [data-theme="dark"] footer {
-            background: var(--dark-surface);
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .modal.show {
-            opacity: 1;
-        }
-
-        .modal-content {
-            background-color: var(--white);
-            margin: 2% auto;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 800px;
-            max-height: 90vh;
-            overflow: hidden;
-            transform: scale(0.7) translateZ(-100px);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-        }
-
-        .modal.show .modal-content {
-            transform: scale(1) translateZ(0);
-        }
-
-        .modal-header {
-            background: var(--primary-color);
-            color: white;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .modal-header h2 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-
-        .close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 0;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-body {
-            padding: 2rem;
-            max-height: calc(90vh - 80px);
-            overflow-y: auto;
-        }
-
-        .cv-section {
-            margin-bottom: 2rem;
-        }
-
-        .cv-section h3 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-item {
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: var(--bg-light);
-            border-radius: 8px;
-            border-left: 4px solid var(--primary-color);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .project-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
-            border-left-width: 6px;
-        }
-
-        .project-title {
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .project-date {
-            color: var(--primary-color);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-item ul {
-            margin-left: 1rem;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: scale(0.7) translateZ(-100px);
-                opacity: 0;
-            }
-
-            to {
-                transform: scale(1) translateZ(0);
-                opacity: 1;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-                z-index: 1000;
-            }
-
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: var(--white);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-                padding: 2rem 0;
-                z-index: 999;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .profile-img {
-                width: 200px;
-                height: 200px;
-            }
-
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .social-link {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-
-            .cta-buttons {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .modal-content {
-                margin: 5% auto;
-                width: 95%;
-                max-height: 85vh;
-            }
-
-            .modal-body {
-                padding: 1rem;
-                max-height: calc(85vh - 80px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .profile-img {
-                width: 180px;
-                height: 180px;
-            }
-        }
-
-        /* Scroll animations */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .scroll-animate.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="nav-container">
@@ -664,10 +57,8 @@
         </div>
     </nav>
 
-    <!-- Mobile Navigation Overlay -->
     <div class="nav-overlay" onclick="closeMobileMenu()"></div>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
@@ -689,7 +80,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title scroll-animate">About Me</h2>
@@ -707,7 +97,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title scroll-animate">Let's Connect</h2>
@@ -740,7 +129,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>Note: The best way to reach me is through email. Feel free to contact me for any inquiries or
@@ -749,7 +137,6 @@
         </div>
     </footer>
 
-    <!-- CV Modal -->
     <div id="cvModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -840,12 +227,11 @@
                                 CSV. It retrieves VAT tax data for each VRN directly
                                 from HMRC systems. Streamlines compliance checks by saving time and reducing manual
                                 lookup errors.</li>
-                            <li></li>
+
                         </ul>
                     </div>
                 </div>
 
-                <!-- Experience -->
                 <div class="cv-section">
                     <h3>Experience</h3>
 
@@ -885,7 +271,6 @@
                 </div>
 
 
-                <!-- Trainings & Certifications -->
                 <div class="cv-section">
                     <h3>Trainings & Certifications</h3>
 
@@ -933,7 +318,6 @@
                     </p>
                 </div>
 
-                <!-- Skills -->
                 <div class="cv-section">
                     <h3>Skills</h3>
 
@@ -964,152 +348,6 @@
     </div>
     </div>
     </div>
-
-    <script>
-        // Theme Toggle
-        function toggleTheme() {
-            const body = document.body;
-            const themeIcon = document.querySelector('.theme-toggle i');
-
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.removeAttribute('data-theme');
-                themeIcon.className = 'fas fa-moon';
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'fas fa-sun';
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Load saved theme
-        document.addEventListener('DOMContentLoaded', function () {
-            const savedTheme = localStorage.getItem('theme');
-            const themeIcon = document.querySelector('.theme-toggle i');
-
-            if (savedTheme === 'dark') {
-                document.body.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'fas fa-sun';
-            }
-        });
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            const overlay = document.querySelector('.nav-overlay');
-
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-
-        function closeMobileMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            const overlay = document.querySelector('.nav-overlay');
-
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-            overlay.classList.remove('active');
-        }
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-
-        // Modal Functions
-        function openModal() {
-            const modal = document.getElementById('cvModal');
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-
-            // Trigger animation
-            setTimeout(() => {
-                modal.classList.add('show');
-            }, 10);
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('cvModal');
-            modal.classList.remove('show');
-
-            setTimeout(() => {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }, 400);
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function (event) {
-            const modal = document.getElementById('cvModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-
-        // Keyboard event listeners
-        document.addEventListener('keydown', function (event) {
-            // Close mobile menu on Escape key
-            if (event.key === 'Escape') {
-                closeMobileMenu();
-                closeModal();
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Scroll animations
-        function animateOnScroll() {
-            const animatedElements = document.querySelectorAll('.scroll-animate');
-
-            animatedElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Run once on page load
-
-        // Add active state to navigation based on scroll position
-        window.addEventListener('scroll', function () {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop <= 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
