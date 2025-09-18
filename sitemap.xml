@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main homepage -->
+  <url>
+    <loc>https://iamxeeshankhan.github.io/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Section anchors -->
+  <url>
+    <loc>https://iamxeeshankhan.github.io/#home</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iamxeeshankhan.github.io/#about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iamxeeshankhan.github.io/#contact</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
