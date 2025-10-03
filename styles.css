@@ -418,18 +418,7 @@ nav.sticky {
 }
 
 /* Bluesky icon matches FA size and inherits color */
-.icon {
-  display: inline-block;
-  width: 1.2rem;
-  height: 1.2rem;
-}
-
-.icon-bsky {
-  /* Use the provided PNG as a mask so it can inherit color */
-  -webkit-mask: url('https://ci3.googleusercontent.com/meips/ADKq_Nau66-7Yn9fR5jSV9iv12Aiig9Te0Py0AMzarHrgY7W32LaxCFG2it1G7DJ3BS0i7yOS3MDKgAovMmug1Lu6Ygwdb_wyon86auubQmw0OgwMYeqRMOWMiKY9S29594JlbKNxwybkEHzsG31XAkprcb1UveSEe_8woHsphkiRbenhDEBap_CE5FKGA=s0-d-e1-ft#http://cdn.mcauto-images-production.sendgrid.net/cc8ddcf649afa5e0/69dc9ddb-b05f-4371-bb0a-ff395594725a/2319x2049.png') center / contain no-repeat;
-  mask: url('https://ci3.googleusercontent.com/meips/ADKq_Nau66-7Yn9fR5jSV9iv12Aiig9Te0Py0AMzarHrgY7W32LaxCFG2it1G7DJ3BS0i7yOS3MDKgAovMmug1Lu6Ygwdb_wyon86auubQmw0OgwMYeqRMOWMiKY9S29594JlbKNxwybkEHzsG31XAkprcb1UveSEe_8woHsphkiRbenhDEBap_CE5FKGA=s0-d-e1-ft#http://cdn.mcauto-images-production.sendgrid.net/cc8ddcf649afa5e0/69dc9ddb-b05f-4371-bb0a-ff395594725a/2319x2049.png') center / contain no-repeat;
-  background-color: currentColor;
-}
+/* removed custom PNG-based Bluesky icon (using Font Awesome instead) */
 
 /* Footer */
 footer {
