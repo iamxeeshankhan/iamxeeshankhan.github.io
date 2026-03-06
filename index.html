@@ -4,387 +4,456 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Zeeshan Khan</title>
-
+    <title>Muhammad Zeeshan Khan - Software Engineer</title>
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'%3E%3Cpath d='M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h3l-1 1v1h12v-1l-1-1h3c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z'/%3E%3Cpath d='M9 8h2v1H9zm4 0h2v1h-2zM9 10h6v1H9zm0 2h4v1H9z'/%3E%3C/svg%3E">
-
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23C9A84C'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='18' font-weight='bold' fill='%230A0A0A'%3EMZK%3C/text%3E%3C/svg%3E">
     <meta name="description"
-        content="Muhammad Zeeshan Khan - Software Engineer specializing in AI, Machine Learning, and Computer Vision. Portfolio showcasing innovative projects and research.">
-    <meta name="keywords"
-        content="Muhammad Zeeshan Khan, Software Engineer, AI, Machine Learning, Computer Vision, Portfolio">
-    <meta name="author" content="Muhammad Zeeshan Khan">
-    <meta name="google-site-verification" content="juloLfKLoBVzLp6OhLAIcgMt3bCB3jpa1oXc7mfJZKE" />
-    <meta property="og:title" content="Muhammad Zeeshan Khan">
-    <meta property="og:description"
-        content="Software Engineer passionate about AI, Machine Learning, and Computer Vision">
-    <meta property="og:image"
-        content="https://avatars.githubusercontent.com/u/128678407?s=400&u=1db660d0cf448bedd1fbbca69926c9366944af1b&v=4text=Muhammad+Zeeshan+Khan+-+Software+Engineer">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Muhammad Zeeshan Khan - Portfolio">
-    <meta name="twitter:description"
-        content="Software Engineer passionate about AI, Machine Learning, and Computer Vision">
-    <meta name="twitter:image"
-        content="https://avatars.githubusercontent.com/u/128678407?s=400&u=1db660d0cf448bedd1fbbca69926c9366944af1b&v=4?text=Muhammad+Zeeshan+Khan+-+Software+Engineer">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        content="Muhammad Zeeshan Khan — Software Engineer specializing in AI, Machine Learning, and Computer Vision.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Instrument+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/phosphor-icons"></script>
-    <script src="script.js" defer></script>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D5PK1CE9HR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-D5PK1CE9HR');
-</script>
-
 <body>
-    <nav>
-        <div class="container">
-            <div class="nav-container">
-                <a href="#home" class="logo">MZK</a>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><button class="btn btn-primary" onclick="openModal()">View CV</button></li>
-                    <li><button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button></li>
-                </ul>
-                <div class="hamburger" onclick="toggleMobileMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+    <!-- Grain overlay -->
+    <div class="grain"></div>
+    <!-- Custom cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="logo-link" aria-label="MZK Home">
+                <svg class="logo-svg" viewBox="0 0 58 36" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <!-- Decorative bracket left -->
+                    <path d="M6 4 L2 4 L2 32 L6 32" stroke="#C9A84C" stroke-width="1.5" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <!-- M -->
+                    <path d="M10 26 L10 10 L18 22 L26 10 L26 26" stroke="#E8E0D0" stroke-width="1.8" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <!-- Z -->
+                    <path d="M29 10 L38 10 L29 26 L38 26" stroke="#E8E0D0" stroke-width="1.8" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <!-- K -->
+                    <path d="M41 10 L41 26 M41 18 L49 10 M41 18 L49 26" stroke="#E8E0D0" stroke-width="1.8" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <!-- Decorative bracket right -->
+                    <path d="M52 4 L56 4 L56 32 L52 32" stroke="#C9A84C" stroke-width="1.5" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="btn-cv" onclick="openModal()">
+                        <span class="btn-cv-text">View CV</span>
+                        <i class="fas fa-arrow-right btn-cv-arrow"></i>
+                    </button>
+                </li>
+            </ul>
+
+            <div class="nav-right-controls">
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </nav>
+    <div class="nav-overlay" id="navOverlay" onclick="closeMobileMenu()"></div>
 
-    <div class="nav-overlay" onclick="closeMobileMenu()"></div>
-
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Muhammad Zeeshan Khan</h1>
-                    <p class="motto">"Ad Discendum et Creandum – Learning, Creating, Innovating."</p>
-                    <p>Software Engineer passionate about AI, Machine Learning, and Computer Vision. Currently pursuing
-                        Master's studies while creating innovative solutions for real-world challenges.</p>
-                    <div class="cta-buttons">
-                        <button class="btn btn-primary" onclick="openModal()">View Resume</button>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        <div class="hero-bg-text" aria-hidden="true">MZK</div>
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-eyebrow reveal">
+                    <span class="eyebrow-line"></span>
+                    <span>Software Engineer · AI & ML Researcher</span>
+                </div>
+                <h1 class="hero-name reveal">
+                    <span class="name-first">Muhammad</span>
+                    <span class="name-last">Zeeshan <em>Khan</em></span>
+                </h1>
+                <p class="hero-motto reveal">
+                    "Ad Discendum et Creandum —<br>Learning, Creating, Innovating."
+                </p>
+                <p class="hero-desc reveal">
+                    Crafting intelligent systems at the intersection of AI, Machine Learning, and Computer Vision.
+                    Currently advancing research through Master's studies.
+                </p>
+                <div class="hero-actions reveal">
+                    <button class="btn-primary" onclick="openModal()">
+                        <span>View Resume</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <a href="#contact" class="btn-outline">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="profile-frame reveal">
+                    <div class="profile-ring"></div>
+                    <div class="profile-ring-2"></div>
+                    <img src="https://avatars.githubusercontent.com/u/128678407?s=400&u=7504b200d36bd968cebf7a8461f5d5398cc532b7&v=4"
+                        alt="Muhammad Zeeshan Khan" class="profile-photo" />
+                    <div class="profile-badge">
+                        <span class="badge-dot"></span>
+                        <span>Available for Collaboration</span>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="https://avatars.githubusercontent.com/u/128678407?s=400&u=1db660d0cf448bedd1fbbca69926c9366944af1b&v=4?text=MZK"
-                        alt="Muhammad Zeeshan Khan" class="profile-img">
+            </div>
+        </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-inner">
+            <div class="section-label reveal">
+                <span class="label-num">01</span>
+                <span class="label-text">About</span>
+            </div>
+            <h2 class="section-heading reveal">The Story <em>Behind</em><br>the Engineer</h2>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>I hold a Bachelor's degree in Computer Science from The University of Agriculture, Peshawar,
+                        Pakistan, and I am currently pursuing my Master's studies to further advance my knowledge. My
+                        academic and professional journey has shaped a strong interest in machine learning, artificial
+                        intelligence, computer vision, image processing, and large language models.</p>
+                    <p>Alongside my studies, I work as a software engineer with experience in MERN development, data
+                        science, and applied machine learning. My research interests are diverse, and I am particularly
+                        driven to explore how emerging technologies can be applied to address real-world challenges and
+                        create innovative solutions.</p>
+                </div>
+                <div class="about-skills reveal">
+                    <div class="skill-group">
+                        <h4>AI & Machine Learning</h4>
+                        <div class="skill-tags">
+                            <span>PyTorch</span><span>TensorFlow</span><span>Computer Vision</span>
+                            <span>NLP</span><span>Diffusion Models</span><span>LLMs</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Development</h4>
+                        <div class="skill-tags">
+                            <span>Python</span><span>JavaScript</span><span>MERN Stack</span>
+                            <span>React</span><span>Node.js</span><span>C++</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Cloud & DevOps</h4>
+                        <div class="skill-tags">
+                            <span>GCP</span><span>Azure</span><span>Docker</span>
+                            <span>Firebase</span><span>Kubernetes</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title scroll-animate">About Me</h2>
-            <div class="about-content scroll-animate">
-                <p>I hold a Bachelor's degree in Computer Science from The University of Agriculture, Peshawar,
-                    Pakistan, and I am currently pursuing my Master's studies to further advance my knowledge. My
-                    academic and professional journey has shaped a strong interest in machine learning, artificial
-                    intelligence, computer vision, image processing, and large language models.</p>
-                <br>
-                <p>Alongside my studies, I work as a software engineer with experience in MERN development, data
-                    science, and applied machine learning. My research interests are diverse, and I am particularly
-                    driven to explore how emerging technologies can be applied to address real-world challenges and
-                    create innovative solutions.</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title scroll-animate">Let's Connect</h2>
-            <div class="social-links scroll-animate">
-                <a href="mailto:iamxeeshankhan@gmail.com" class="social-link">
+        <div class="section-inner">
+            <div class="section-label reveal">
+                <span class="label-num">02</span>
+                <span class="label-text">Contact</span>
+            </div>
+            <h2 class="section-heading reveal">Let's Build<br><em>Something</em> Together</h2>
+            <p class="contact-sub reveal">The best way to reach me is via email. Open to research collaborations,
+                engineering roles, and interesting conversations.</p>
+            <div class="social-grid reveal">
+                <a href="mailto:iamxeeshankhan@gmail.com" class="social-card featured">
                     <i class="fas fa-envelope"></i>
-                    <span>Email</span>
+                    <span class="social-name">Email</span>
+                    <span class="social-handle">iamxeeshankhan@gmail.com</span>
+                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
                 </a>
-                <a href="https://linkedin.com/in/iamxeeshankhan" target="_blank" class="social-link">
+                <a href="https://linkedin.com/in/iamxeeshankhan" target="_blank" class="social-card">
                     <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
+                    <span class="social-name">LinkedIn</span>
+                    <span class="social-handle">iamxeeshankhan</span>
+                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
                 </a>
-                <a href="https://twitter.com/IamXeeshanKhan_" target="_blank" class="social-link">
-                    <i class="fab fa-twitter"></i>
-                    <span>Twitter</span>
-                </a>
-                <a href="https://bsky.app/profile/did:plc:xxcqlmnsomx2wwk2gdguhlvn" target="_blank" class="social-link">
-                    <i class="fa-brands fa-bluesky"></i>
-                    <span>Bluesky</span>
-                </a>
-                <a href="https://github.com/iamxeeshankhan" target="_blank" class="social-link">
+                <a href="https://github.com/iamxeeshankhan" target="_blank" class="social-card">
                     <i class="fab fa-github"></i>
-                    <span>GitHub</span>
+                    <span class="social-name">GitHub</span>
+                    <span class="social-handle">iamxeeshankhan</span>
+                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
                 </a>
-                <a href="https://www.kaggle.com/izeeshan" target=" _blank" class="social-link">
+                <a href="https://twitter.com/IamXeeshanKhan_" target="_blank" class="social-card">
+                    <i class="fab fa-twitter"></i>
+                    <span class="social-name">Twitter / X</span>
+                    <span class="social-handle">IamXeeshanKhan_</span>
+                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="https://bsky.app/profile/did:plc:xxcqlmnsomx2wwk2gdguhlvn" target="_blank" class="social-card">
+                    <i class="fa-brands fa-bluesky"></i>
+                    <span class="social-name">Bluesky</span>
+                    <span class="social-handle">MZK on Bluesky</span>
+                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="https://www.kaggle.com/izeeshan" target="_blank" class="social-card">
                     <i class="fab fa-kaggle"></i>
-                    <span>Kaggle</span>
+                    <span class="social-name">Kaggle</span>
+                    <span class="social-handle">izeeshan</span>
+                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
                 </a>
-                <a href="https://gitlab.com/iamxeeshankhan" target="_blank" class="social-link">
+                <a href="https://gitlab.com/iamxeeshankhan" target="_blank" class="social-card">
                     <i class="fab fa-gitlab"></i>
-                    <span>GitLab</span>
+                    <span class="social-name">GitLab</span>
+                    <span class="social-handle">iamxeeshankhan</span>
+                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
                 </a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>Note: The best way to reach me is through email. Feel free to contact me for any inquiries or
-                collaborations!</p>
-            <p>&copy; Copyright 2025 Muhammad Zeeshan Khan. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <a href="#home" class="footer-logo" aria-label="Back to top">
+                <svg viewBox="0 0 58 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="44">
+                    <path d="M6 4 L2 4 L2 32 L6 32" stroke="#C9A84C" stroke-width="1.5" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M10 26 L10 10 L18 22 L26 10 L26 26" stroke="#E8E0D0" stroke-width="1.8" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M29 10 L38 10 L29 26 L38 26" stroke="#E8E0D0" stroke-width="1.8" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M41 10 L41 26 M41 18 L49 10 M41 18 L49 26" stroke="#E8E0D0" stroke-width="1.8" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M52 4 L56 4 L56 32 L52 32" stroke="#C9A84C" stroke-width="1.5" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+            <p class="footer-note">The best way to reach me is through email — always open for inquiries and
+                collaborations.
+            </p>
+            <p class="footer-copy">&copy; 2025 Muhammad Zeeshan Khan. All rights reserved.</p>
         </div>
     </footer>
 
-    <div id="cvModal" class="modal">
-        <div class="modal-content">
+    <!-- CV Modal -->
+    <div id="cvModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-panel">
             <div class="modal-header">
-                <h2>Curriculum Vitae</h2>
-                <button class="close" onclick="closeModal()">&times;</button>
+                <div>
+                    <p class="modal-eyebrow">Curriculum Vitae</p>
+                    <h2 id="modalTitle">Muhammad Zeeshan Khan</h2>
+                </div>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
             </div>
             <div class="modal-body">
-                <div class="cv-section">
-                    <h3>Personal Information</h3>
-                    <p><strong>Name:</strong> Muhammad Zeeshan Khan</p>
-                    <p><strong>Position:</strong> Software Engineer</p>
-                    <p><strong>Email:</strong> iamxeeshankhan@gmail.com</p>
-                    <p><strong>Phone:</strong> +923495139070</p>
-                </div>
 
-                <div class="cv-section">
-                    <h3>Summary</h3>
-                    <p>I am a dedicated and hardworking computer science graduate with a background in software
-                        development,
-                        MERN development, data analytics, and machine learning. I am proficient in programming languages
-                        such as
-                        Python, R, JavaScript, and C++, and I have experience with tools like PyTorch, TensorFlow, and
-                        AWS. I am pas-
-                        sionate about using technology to develop practical solutions and am always eager to learn and
-                        tackle new
-                        challenges. I work well both independently and as part of a team, maintaining a positive
-                        attitude and a commit-
-                        ment to delivering high-quality results. I am excited to advance my skills and contribute to
-                        impactful projects.</p>
-                </div>
-
-                <div class="cv-section">
-                    <h3>Projects</h3>
-
-                    <div class="project-item">
-                        <div class="project-title">Prompt-Driven Image Analysis</div>
-                        <div class="project-date">2025 / 10</div>
-                        <ul>
-                            <li>Developed an AI pipeline integrating GroundingDINO, SAM, Stable Diffusion, and
-                                LLaVA for prompt-driven segmentation, object transformation, and interpretation.</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-item">
-                        <div class="project-title">WildNet: Cross-Ecosystem Animal Detection with YOLOv11</div>
-                        <div class="project-date">2025 / 09</div>
-                        <ul>
-                            <li>Developed WildNet, a YOLOv11-based cross-ecosystem animal detection system integrating
-                                six terrestrial, aerial, and
-                                aquatic datasets for multi-domain wildlife recognition.</li>
-                            <li>Automated dataset acquisition, preprocessing, and YOLO format conversion with
-                                performance evaluation (mAP and related
-                                metrics) in a unified pipeline.</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-item">
-                        <div class="project-title">Pediatric Wrist X-ray Abnormality Detection - Research Project</div>
-                        <div class="project-date">2025 / 09</div>
-                        <ul>
-                            <li>Implemented a YOLOv11-based computer vision pipeline in a Google Colab notebook to
-                                detect fractures and other abnormalities in pediatric wrist X-rays</li>
-                            <li>Automated download of the GRAZPEDWRI-DX dataset and organized raw files for processing
-                            </li>
-                            <li>Pre-processed images and annotations, converting the dataset into YOLO format with
-                                train/validation/test splits and class mappings</li>
-                            <li>Fine-tuned YOLOv11 to detect nine pediatric wrist X-ray findings: Bone anomaly,
-                                Fracture, Foreign body, etc.</li>
-                            <li>Reusable script packages and a reproducible notebook for training, inference, and
-                                evaluation on new images</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-item">
-                        <div class="project-title">BS(CS) Final Year Project - The University of Agriculture</div>
-                        <div class="project-date">2024 / 08</div>
-                        <ul>
-                            <li>Developed a Speech Recognition Application with a user-friendly GUI using Python,
-                                Tkinter, and AssemblyAI</li>
-                            <li>The application transcribes speech, generates subtitles, and summarizes spoken content
-                            </li>
-                            <li>Implemented advanced speech recognition algorithms to ensure high accuracy</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-item">
-                        <div class="project-title">e-island - Personal Web Project</div>
-                        <div class="project-date">2023 / 06</div>
-                        <ul>
-                            <li>Created a full-stack website using vanilla JavaScript for the front-end with Pug and
-                                Express.js with MongoDb and Mongoose in the backend and deployed it on Microsoft Azure
-                            </li>
-                            <li>Gained hands-on experience in cloud hosting, deployment, and scalability</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-item">
-                        <div class="project-title">Projects for Tools for accountants Co., UK</div>
-                        <div class="project-date">2024 / 12 - 2025/ 08</div>
-                        <ul>
-                            <li><b>Agent Authorization Tool:</b> Built a tool that invites multiple clients to authorize
-                                their accountant to manage taxes
-                                on their behalf. I also Deployed the service on Google Cloud Platform</li>
-                            <li><b>Self Assessment Checker:</b> Developed a tool to help UK accountants track their
-                                clients’ Self Assessment tax status.</li>
-                            <li><b>Missed Deadline Tracker:</b> Created an automated tool that identifies companies that
-                                missed their tax payment deadlines. I Deployed it on a GCP VM, customized its domain,
-                                and scheduled automated start/stop.</li>
-                            <li><b>VAT Checker:</b> An automated tool that allows accountants to upload client VRNs via
-                                CSV. It retrieves VAT tax data for each VRN directly
-                                from HMRC systems. Streamlines compliance checks by saving time and reducing manual
-                                lookup errors.</li>
-
-                        </ul>
+                <div class="cv-block">
+                    <div class="cv-block-label">Personal</div>
+                    <div class="cv-info-grid">
+                        <div class="cv-info-item"><span class="cv-info-key">Position</span><span
+                                class="cv-info-val">Software Engineer</span></div>
+                        <div class="cv-info-item"><span class="cv-info-key">Email</span><span
+                                class="cv-info-val">iamxeeshankhan@gmail.com</span></div>
+                        <div class="cv-info-item"><span class="cv-info-key">Phone</span><span
+                                class="cv-info-val">+923495139070</span></div>
                     </div>
                 </div>
 
-                <div class="cv-section">
-                    <h3>Experience</h3>
-
-                    <p>
-                    <div class="project-title"><a href="https://toolsforaccountants.co.uk/"
-                            style="color: var(--accent-color);" target="_blank">Tools for Accountants Co.,
-                            UK</a></div>
-                    <div class="project-date">Dec 2024 — Aug 2025</div>
-                    <ul>
-                        <li style="margin-left: 4%;">Sole developer responsible for end-to-end development of the
-                            platform, covering back-end, front-end, and deployment</li>
-                        <li style="margin-left: 4%;">Designed and deployed cloud-based architecture on Google Cloud
-                            Platform and
-                            Firebase to support scalable accounting services.</li>
-                    </ul>
-                    </p>
-
-                    <p style="margin-top: 2%;">
-                    <div class="project-title"><a href="https://www.bradford.ac.uk/external/"
-                            style="color: var(--accent-color);" target="_blank">University of Bradford</a></div>
-                    <div class="project-date">May 2023 — Aug 2025</div>
-                    <ul>
-                        <li style="margin-left: 4%;">Served remotely as Teaching Assistant at the University of
-                            Bradford,
-                            supporting Database Management Systems and Web
-                            Development modules, including virtual labs and workshops.</li>
-                        <li style="margin-left: 4%;">Provided academic and technical guidance to undergraduate and
-                            postgraduate students through group and one-on-one online
-                            sessions, mentoring on programming fundamentals, system architecture, and full-stack
-                            projects.
-                        </li>
-                        <li style="margin-left: 4%;">Assisted in designing and improving course materials, preparing
-                            tutorials, documentation, and practical resources to
-                            align with academic and industry standards.</li>
-                    </ul>
-                    </p>
+                <div class="cv-block">
+                    <div class="cv-block-label">Summary</div>
+                    <p class="cv-para">A dedicated computer science graduate with a background in software development,
+                        MERN development, data analytics, and machine learning. Proficient in Python, R, JavaScript, and
+                        C++, with experience in PyTorch, TensorFlow, and AWS. Passionate about building practical,
+                        impactful solutions and always eager to tackle new challenges.</p>
                 </div>
 
-
-                <div class="cv-section">
-                    <h3>Trainings & Certifications</h3>
-
-                    <p>
-                    <div class="project-title"><a href="https://www.kpbte.edu.pk/" style="color: var(--accent-color);"
-                            target="_blank">Diploma in Information Technology</a>
+                <div class="cv-block">
+                    <div class="cv-block-label">Experience</div>
+                    <div class="cv-timeline">
+                        <div class="cv-entry">
+                            <div class="cv-entry-meta">
+                                <a href="https://toolsforaccountants.co.uk/" target="_blank" class="cv-entry-org">Tools
+                                    for Accountants Co., UK</a>
+                                <span class="cv-entry-date">Dec 2024 — Aug 2025</span>
+                            </div>
+                            <ul class="cv-list">
+                                <li>Sole developer responsible for end-to-end development covering back-end, front-end,
+                                    and deployment.</li>
+                                <li>Designed and deployed cloud-based architecture on Google Cloud Platform and Firebase
+                                    for scalable accounting services.</li>
+                            </ul>
+                        </div>
+                        <div class="cv-entry">
+                            <div class="cv-entry-meta">
+                                <a href="https://www.bradford.ac.uk/external/" target="_blank"
+                                    class="cv-entry-org">University of Bradford</a>
+                                <span class="cv-entry-date">May 2023 — Aug 2025</span>
+                            </div>
+                            <ul class="cv-list">
+                                <li>Teaching Assistant for Database Management Systems and Web Development modules.</li>
+                                <li>Mentored undergraduate and postgraduate students through online sessions on
+                                    programming and full-stack projects.</li>
+                                <li>Assisted in designing course materials, tutorials, and documentation aligned with
+                                    academic and industry standards.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="project-date">2020</div>
-                    <ul>
-                        <li style="margin-left: 4%;">Completed DIT, gaining strong foundational skills in computer
-                            systems, programming, system analysis, and technical
-                            support.</li>
-                    </ul>
-                    </p>
-
-                    <p style="margin-top: 2%;">
-                    <div class="project-title"><a href="https://www.udemy.com/" style="color: var(--accent-color);"
-                            target="_blank">Python & JavaScript</a></div>
-                    <div class="project-date">2021</div>
-                    <ul>
-                        <li style="margin-left: 4%;">Mastered Python and JavaScript, building a strong foundation for
-                            advanced programming concepts and real-world
-                            application development.</li>
-                    </ul>
-                    </p>
-
-                    <p style="margin-top: 2%;">
-                    <div class="project-title"><a href="https://www.udemy.com/" style="color: var(--accent-color);"
-                            target="_blank">Machine Learning and Data Science</a></div>
-                    <div class="project-date">2023</div>
-                    <ul>
-                        <li style="margin-left: 4%;">Acquired hands-on expertise in machine learning and data science,
-                            enabling proficient analysis and predictive modeling.</li>
-                    </ul>
-                    </p>
-
-                    <p style="margin-top: 2%;">
-                    <div class="project-title"><a href="https://www.udemy.com/" style="color: var(--accent-color);"
-                            target="_blank">MERN Stack</a></div>
-                    <div class="project-date">2024</div>
-                    <ul>
-                        <li style="margin-left: 4%;">Developed end-to-end proficiency in MERN stack, excelling in
-                            building dynamic and scalable full-stack web applications.</li>
-                    </ul>
-                    </p>
                 </div>
 
-                <div class="cv-section">
-                    <h3>Skills</h3>
-
-                    <b>Programming & Development:</b> Python, R, Java, C++, Rust, JavaScript/TypeScript, LaTeX; MERN
-                    Stack; React, Vue, Node.js; Web Scraping & Automation (Selenium, Beautiful Soup).
-
-                    <div style="margin-top:1%;"></div>
-
-                    <b>AI & Machine Learning:</b> PyTorch, TensorFlow, Keras; Generative Models (Diffusion,
-                    Transformers); Computer Vision, NLP,
-                    Reinforcement Learning, Predictive Modeling, Digital Image Processing.
-
-                    <div style="margin-top:1%;"></div>
-
-                    <b>Data Science & Visualization:</b> NumPy, Pandas, Seaborn, Plotly, Matplotlib; SQL/NoSQL
-                    (PostgreSQL, MongoDB).
-
-                    <div style="margin-top:1%;"></div>
-
-                    <b>Cloud & DevOps:</b> Microsoft Azure, Google Cloud Platform, Firebase; Docker, Kubernetes; CI/CD;
-                    Git, GitHub.
-
-                    </p>
+                <div class="cv-block">
+                    <div class="cv-block-label">Projects</div>
+                    <div class="cv-timeline">
+                        <div class="cv-entry">
+                            <div class="cv-entry-meta">
+                                <span class="cv-entry-org">Prompt-Driven Image Analysis</span>
+                                <span class="cv-entry-date">2025</span>
+                            </div>
+                            <ul class="cv-list">
+                                <li>AI pipeline integrating GroundingDINO, SAM, Stable Diffusion, and LLaVA for
+                                    prompt-driven segmentation, object transformation, and interpretation.</li>
+                            </ul>
+                        </div>
+                        <div class="cv-entry">
+                            <div class="cv-entry-meta">
+                                <span class="cv-entry-org">WildNet: Cross-Ecosystem Animal Detection</span>
+                                <span class="cv-entry-date">2025</span>
+                            </div>
+                            <ul class="cv-list">
+                                <li>YOLOv11-based cross-ecosystem animal detection system integrating six terrestrial,
+                                    aerial, and aquatic datasets.</li>
+                                <li>Automated dataset acquisition, preprocessing, YOLO format conversion and performance
+                                    evaluation pipeline.</li>
+                            </ul>
+                        </div>
+                        <div class="cv-entry">
+                            <div class="cv-entry-meta">
+                                <span class="cv-entry-org">Pediatric Wrist X-ray Abnormality Detection</span>
+                                <span class="cv-entry-date">2025</span>
+                            </div>
+                            <ul class="cv-list">
+                                <li>YOLOv11-based pipeline to detect fractures and abnormalities in pediatric wrist
+                                    X-rays using GRAZPEDWRI-DX dataset.</li>
+                                <li>Fine-tuned YOLOv11 to detect nine pediatric X-ray findings with a fully reproducible
+                                    training and evaluation notebook.</li>
+                            </ul>
+                        </div>
+                        <div class="cv-entry">
+                            <div class="cv-entry-meta">
+                                <span class="cv-entry-org">Projects for Tools for Accountants Co., UK</span>
+                                <span class="cv-entry-date">2024–2025</span>
+                            </div>
+                            <ul class="cv-list">
+                                <li><strong>Agent Authorization Tool:</strong> Invites multiple clients to authorize
+                                    their accountant, deployed on GCP.</li>
+                                <li><strong>Self Assessment Checker:</strong> Tracks clients' UK Self Assessment tax
+                                    status.</li>
+                                <li><strong>Missed Deadline Tracker:</strong> Automated tool identifying companies that
+                                    missed tax deadlines, deployed on GCP VM.</li>
+                                <li><strong>VAT Checker:</strong> CSV-based VRN lookup tool retrieving VAT data directly
+                                    from HMRC systems.</li>
+                            </ul>
+                        </div>
+                        <div class="cv-entry">
+                            <div class="cv-entry-meta">
+                                <span class="cv-entry-org">BS(CS) Final Year Project — University of Agriculture</span>
+                                <span class="cv-entry-date">2024</span>
+                            </div>
+                            <ul class="cv-list">
+                                <li>Speech Recognition Application with GUI using Python, Tkinter, and AssemblyAI for
+                                    transcription, subtitles, and summarization.</li>
+                            </ul>
+                        </div>
+                        <div class="cv-entry">
+                            <div class="cv-entry-meta">
+                                <span class="cv-entry-org">e-island — Personal Web Project</span>
+                                <span class="cv-entry-date">2023</span>
+                            </div>
+                            <ul class="cv-list">
+                                <li>Full-stack website using vanilla JS, Pug, Express.js, MongoDB, deployed on Microsoft
+                                    Azure.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="cv-block">
+                    <div class="cv-block-label">Certifications</div>
+                    <div class="cv-certs">
+                        <div class="cv-cert"><span class="cv-cert-name">Diploma in Information Technology</span><span
+                                class="cv-cert-year">2020</span></div>
+                        <div class="cv-cert"><span class="cv-cert-name">Python & JavaScript — Udemy</span><span
+                                class="cv-cert-year">2021</span></div>
+                        <div class="cv-cert"><span class="cv-cert-name">Machine Learning & Data Science —
+                                Udemy</span><span class="cv-cert-year">2023</span></div>
+                        <div class="cv-cert"><span class="cv-cert-name">MERN Stack — Udemy</span><span
+                                class="cv-cert-year">2024</span></div>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <div class="cv-block-label">Skills</div>
+                    <div class="cv-skills-groups">
+                        <div class="cv-skill-row"><span class="cv-skill-cat">Programming</span><span
+                                class="cv-skill-vals">Python · R · Java · C++ · Rust · JavaScript / TypeScript ·
+                                LaTeX</span></div>
+                        <div class="cv-skill-row"><span class="cv-skill-cat">AI & ML</span><span
+                                class="cv-skill-vals">PyTorch · TensorFlow · Keras · Diffusion Models · Transformers ·
+                                Computer Vision · NLP · RL</span></div>
+                        <div class="cv-skill-row"><span class="cv-skill-cat">Data</span><span
+                                class="cv-skill-vals">NumPy · Pandas · Seaborn · Plotly · Matplotlib · PostgreSQL ·
+                                MongoDB</span></div>
+                        <div class="cv-skill-row"><span class="cv-skill-cat">Cloud</span><span class="cv-skill-vals">GCP
+                                · Azure · Firebase · Docker · Kubernetes · CI/CD · Git</span></div>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </div>
 
-    </div>
-    </div>
-    </div>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

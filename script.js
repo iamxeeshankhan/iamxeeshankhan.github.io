@@ -1,200 +1,176 @@
-///////////////////////////////////////
-///////// Theme Toggle
-///////////////////////////////////////
-function toggleTheme() {
-  const body = document.body;
-  const themeIcon = document.querySelector(".theme-toggle i");
+// ---- Custom Cursor ----
+const cursorDot = document.querySelector(".cursor-dot");
+const cursorRing = document.querySelector(".cursor-ring");
+let mouseX = 0,
+  mouseY = 0;
+let ringX = 0,
+  ringY = 0;
 
-  if (body.getAttribute("data-theme") === "dark") {
-    body.removeAttribute("data-theme");
-    themeIcon.className = "fas fa-moon";
-    localStorage.setItem("theme", "light");
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  cursorDot.style.left = mouseX + "px";
+  cursorDot.style.top = mouseY + "px";
+});
+
+function animateCursor() {
+  ringX += (mouseX - ringX) * 0.12;
+  ringY += (mouseY - ringY) * 0.12;
+  cursorRing.style.left = ringX + "px";
+  cursorRing.style.top = ringY + "px";
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+document
+  .querySelectorAll("a, button, .social-card, .skill-tags span")
+  .forEach((el) => {
+    el.addEventListener("mouseenter", () =>
+      document.body.classList.add("cursor-hover"),
+    );
+    el.addEventListener("mouseleave", () =>
+      document.body.classList.remove("cursor-hover"),
+    );
+  });
+
+// ---- Theme ----
+function toggleTheme() {
+  const isLight = document.body.getAttribute("data-theme") === "light";
+  const icon = document.getElementById("themeIcon");
+  if (isLight) {
+    document.body.removeAttribute("data-theme");
+    icon.className = "fas fa-sun";
+    localStorage.setItem("mzk-theme", "dark");
   } else {
-    body.setAttribute("data-theme", "dark");
-    themeIcon.className = "fas fa-sun";
-    localStorage.setItem("theme", "dark");
+    document.body.setAttribute("data-theme", "light");
+    icon.className = "fas fa-moon";
+    localStorage.setItem("mzk-theme", "light");
   }
 }
 
-///////////////////////////////////////
-///////// Load saved theme
-///////////////////////////////////////
-document.addEventListener("DOMContentLoaded", function () {
-  const savedTheme = localStorage.getItem("theme");
-  const themeIcon = document.querySelector(".theme-toggle i");
-
-  if (savedTheme === "light") {
-    document.body.removeAttribute("data-theme");
-    themeIcon.className = "fas fa-moon";
+(function initTheme() {
+  const saved = localStorage.getItem("mzk-theme");
+  const icon = document.getElementById("themeIcon");
+  if (saved === "light") {
+    document.body.setAttribute("data-theme", "light");
+    if (icon) icon.className = "fas fa-moon";
   } else {
-    // Default is dark if nothing saved
-    document.body.setAttribute("data-theme", "dark");
-    themeIcon.className = "fas fa-sun";
+    document.body.removeAttribute("data-theme");
+    if (icon) icon.className = "fas fa-sun";
   }
-});
+})();
 
-///////////////////////////////////////
-///////// Mobile Menu Toggle
-///////////////////////////////////////
+// ---- Mobile Menu ----
 function toggleMobileMenu() {
-  const navMenu = document.querySelector(".nav-menu");
-  const hamburger = document.querySelector(".hamburger");
-  const overlay = document.querySelector(".nav-overlay");
-
-  navMenu.classList.toggle("active");
-  hamburger.classList.toggle("active");
+  const menu = document.getElementById("navMenu");
+  const ham = document.getElementById("hamburger");
+  const overlay = document.getElementById("navOverlay");
+  menu.classList.toggle("active");
+  ham.classList.toggle("active");
   overlay.classList.toggle("active");
 }
 
-///////////////////////////////////////
-///////// Close Mobile Menu
-///////////////////////////////////////
 function closeMobileMenu() {
-  const navMenu = document.querySelector(".nav-menu");
-  const hamburger = document.querySelector(".hamburger");
-  const overlay = document.querySelector(".nav-overlay");
-
-  navMenu.classList.remove("active");
-  hamburger.classList.remove("active");
-  overlay.classList.remove("active");
+  document.getElementById("navMenu").classList.remove("active");
+  document.getElementById("hamburger").classList.remove("active");
+  document.getElementById("navOverlay").classList.remove("active");
 }
 
-// Close mobile menu when clicking on a link
 document.querySelectorAll(".nav-link").forEach((link) => {
   link.addEventListener("click", closeMobileMenu);
 });
 
-///////////////////////////////////////
-///////// Modal Functions
-///////////////////////////////////////
-function openModal() {
-  const modal = document.getElementById("cvModal");
-  modal.style.display = "block";
-  document.body.classList.add("modal-open");
-
-  // Trigger animation
-  setTimeout(() => {
-    modal.classList.add("show");
-  }, 10);
-}
-
-function closeModal() {
-  const modal = document.getElementById("cvModal");
-  modal.classList.remove("show");
-
-  setTimeout(() => {
-    modal.style.display = "none";
-    document.body.classList.remove("modal-open");
-  }, 400);
-}
-
-// Close modal when clicking outside
-window.onclick = function (event) {
-  const modal = document.getElementById("cvModal");
-  if (event.target === modal) {
-    closeModal();
-  }
-};
-
-// Keyboard event listeners
-document.addEventListener("keydown", function (event) {
-  // Close mobile menu on Escape key
-  if (event.key === "Escape") {
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
     closeMobileMenu();
     closeModal();
   }
 });
 
-///////////////////////////////////////
-///////// Smooth scrolling for navigation links
-///////////////////////////////////////
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+// ---- Sticky Nav ----
+const nav = document.getElementById("navbar");
+window.addEventListener(
+  "scroll",
+  () => {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+  },
+  { passive: true },
+);
+
+// ---- Active Nav Link ----
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+function updateActiveLink() {
+  let current = "";
+  sections.forEach((sec) => {
+    const rect = sec.getBoundingClientRect();
+    if (
+      rect.top <= window.innerHeight * 0.45 &&
+      rect.bottom >= window.innerHeight * 0.45
+    ) {
+      current = sec.id;
     }
   });
-});
-
-///////////////////////////////////////
-///////// Scroll animations
-///////////////////////////////////////
-function animateOnScroll() {
-  const animatedElements = document.querySelectorAll(".scroll-animate");
-
-  animatedElements.forEach((element) => {
-    const elementTop = element.getBoundingClientRect().top;
-    const elementVisible = 150;
-
-    if (elementTop < window.innerHeight - elementVisible) {
-      element.classList.add("active");
-    }
+  if (!current && window.scrollY < 100) current = "home";
+  navLinks.forEach((link) => {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === "#" + current,
+    );
   });
 }
+window.addEventListener("scroll", updateActiveLink, { passive: true });
+updateActiveLink();
 
-window.addEventListener("scroll", animateOnScroll);
-animateOnScroll(); // Run once on page load
-
-///////////////////////////////////////
-///////// Dynamic Active Navigation & Sticky Navbar
-///////////////////////////////////////
-window.addEventListener("scroll", function () {
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-  const nav = document.querySelector("nav");
-  const aboutSection = document.getElementById("about");
-
-  // Sticky Navbar
-  const aboutRect = aboutSection.getBoundingClientRect();
-  if (aboutRect.top <= 0) {
-    nav.classList.add("sticky");
-  } else {
-    nav.classList.remove("sticky");
-  }
-
-  // Active Link logic
-  let current = "";
-  sections.forEach((section) => {
-    const sectionTop = section.getBoundingClientRect().top;
-    const sectionHeight = section.clientHeight;
-    const offset = window.innerHeight * 0.5; // Use 50% of the viewport height as offset
-
-    if (sectionTop - offset <= 0 && sectionTop + sectionHeight - offset > 0) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  // Handle the case when the user is at the very top of the page
-  if (!current) {
-    current = "home";
-  }
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
+// ---- Smooth Scroll ----
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute("href"));
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
 
-///////////////////////////////////////
-///////// Initial check on page load
-///////////////////////////////////////
-document.addEventListener("DOMContentLoaded", () => {
-  const nav = document.querySelector("nav");
-  const aboutSection = document.getElementById("about");
-  const aboutRect = aboutSection.getBoundingClientRect();
-  if (aboutRect.top <= 0) {
-    nav.classList.add("sticky");
-  }
-  // Set initial active link
-  const homeLink = document.querySelector('.nav-link[href="#home"]');
-  if (homeLink) {
-    homeLink.classList.add("active");
-  }
-});
+// ---- Scroll Reveal ----
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 },
+);
+
+document
+  .querySelectorAll(".reveal")
+  .forEach((el) => revealObserver.observe(el));
+
+// ---- Modal ----
+function openModal() {
+  const modal = document.getElementById("cvModal");
+  modal.classList.add("open");
+  document.body.classList.add("modal-open");
+  // Scroll to top of modal panel
+  modal.scrollTop = 0;
+}
+
+function closeModal() {
+  const modal = document.getElementById("cvModal");
+  const panel = modal.querySelector(".modal-panel");
+  panel.style.animation = "none";
+  panel.style.transform = "translateY(20px) scale(0.98)";
+  panel.style.opacity = "0";
+  panel.style.transition = "all 0.3s ease";
+  setTimeout(() => {
+    modal.classList.remove("open");
+    document.body.classList.remove("modal-open");
+    panel.style.transform = "";
+    panel.style.opacity = "";
+    panel.style.transition = "";
+    panel.style.animation = "";
+  }, 280);
+}
